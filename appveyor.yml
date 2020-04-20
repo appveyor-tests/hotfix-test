@@ -8,3 +8,5 @@ init:
       Remove-Path 'C:\Strawberry\c\bin'
       Remove-Path 'C:\Strawberry\perl\site\bin'
     }
+- ps: Get-Path
+- ps: $env:path
