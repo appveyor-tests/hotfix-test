@@ -1,12 +1,14 @@
 image: Visual Studio 2019
 
 init:
+- where c++
 - ps: Get-Path
 - ps: $env:path
 - ps: |
     if (Test-Path 'C:\Strawberry') {
       Remove-Path 'C:\Strawberry\c\bin'
       Remove-Path 'C:\Strawberry\perl\site\bin'
+      $env:path = $env:path.replace('C:\Strawberry\c\bin;', '').replace('C:\Strawberry\perl\site\bin;', '')
     }
 - ps: Get-Path
 - ps: $env:path
