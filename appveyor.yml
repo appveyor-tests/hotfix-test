@@ -10,5 +10,9 @@ init:
       Remove-Path 'C:\Strawberry\perl\site\bin'
       $env:path = $env:path.replace('C:\Strawberry\c\bin;', '').replace('C:\Strawberry\perl\site\bin;', '')
     }
+
+test_script:
 - ps: Get-Path
 - ps: $env:path
+
+build: off
